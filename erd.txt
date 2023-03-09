@@ -1,0 +1,25 @@
+
+
+Boards
+id int PK
+taskGroups TaskGroups[]  // Board can have 0 or many taskGroups but each taskGroup will blongs to only one Board
+
+
+TaskGroups
+id int PK
+cards Cards[]  // One TaskGroup can have 0 or many Cards but each Card will blongs to only one TaskGroup
+
+
+Cards
+id int PK
+title varchar 100 chars
+description varchar 500 chars
+status title of associated TaskGroup
+subtasks Subtasks
+
+
+
+Subtasks
+id int PK
+description varchar 100 chars
+status Enum - (1) Completed \ (0) Pending
