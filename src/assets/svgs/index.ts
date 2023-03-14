@@ -5,6 +5,7 @@ import SideBoxSvg from "./sideBoxSvg";
 import MobileScreenLogoSvg from "./mobileScreenLogoSvg";
 import LogoDarkSvg from "./logoDarkSvg";
 import LogoLightSvg from "./logoLightSvg";
+import OpenEyeSvg from "./openEyeSvg";
 
 
 export {
@@ -15,4 +16,5 @@ export {
     MobileScreenLogoSvg,
     LogoDarkSvg,
     LogoLightSvg,
+    OpenEyeSvg,
 }
