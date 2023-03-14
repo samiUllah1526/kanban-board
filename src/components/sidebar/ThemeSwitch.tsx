@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MoonSvg, SideBoxSvg, SunSvg } from '@/assets/svgs'
+import { MoonSvg, SunSvg } from '@/assets/svgs'
 import SwitchBtn from './SwitchBtn';
 
 

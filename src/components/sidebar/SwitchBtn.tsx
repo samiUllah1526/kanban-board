@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { LogoLightSvg, MobileScreenLogoSvg, MoonSvg, SideBoxSvg, SunSvg } from '@/assets/svgs'
 
 
 const SwitchBtn = () => {

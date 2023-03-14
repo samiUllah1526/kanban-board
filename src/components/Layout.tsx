@@ -1,5 +1,5 @@
 import React, { Children } from 'react'
-import SideBar from './SideBar'
+import SideBar from './sidebar'
 import Header from "./Header";
 
 
@@ -13,10 +13,12 @@ type Props = {
 const Layout = ({ nav, header, children }: Props) => {
     return (
         <>
-            <div className='bg-color-bg-dark'>
-                <header className='h-16'>{header}</header>
+            <div >
                 <nav>{nav}</nav>
-                {children}
+                {/* <div>
+                    <header className='h-16'>{header}</header>
+                    {children}
+                </div> */}
             </div>
         </>
     )
