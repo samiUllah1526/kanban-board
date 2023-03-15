@@ -28,7 +28,7 @@ export const Column = ({ label, id, deleteCol }: PropsType ) => {
         <main className='w-80 flex flex-col h-full py-6 px-10'>
             <div className='flex items-center'>
                 <ColoredDot color={'#8471F2'} />
-                <p className='text-white ml-2'>{label}</p>
+                <p className='text-custom-grey-600 ml-2'>{label}</p>
             </div>
             <div className='h-full relative'>
                 <div className='mt-3 flex flex-col h-full border-2 max-w-xs border-dashed border-color-border rounded-lg text-white'></div>

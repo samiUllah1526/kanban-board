@@ -1,7 +1,7 @@
-import { SunSvg } from 'assets/svgs'
 import React, { useState } from 'react'
-import { AddColumnBtn } from './AddColumnBtn'
-import { Column } from './Column'
+import { Column, AddColumnBtn } from '@/components/column'
+import { Card } from '@/components/card'
+
 
 const COLUMNS = [
   { id: 1, label: 'Pending' },
@@ -20,10 +20,9 @@ const Main = () => {
       {
         cols.map(col => {
           return <Column  key={col.id}  id={col.id} label={col.label} deleteCol={deleteCol}/>
-
         })
       }
-      <AddColumnBtn addCol={addCol} label={'+ Add new'} />
+      <AddColumnBtn addCol={addCol} label={'+ Add New Column'} />
     </div>
 
   )
