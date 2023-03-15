@@ -6,7 +6,7 @@ import SwitchBtn from './SwitchBtn';
 const ThemeSwitch = () => {
   return (
     <>
-    <div className='flex gap-5 justify-center w-4/5 py-2'>
+    <div className='flex gap-5 justify-center  py-2'>
       <div className='self-center'><MoonSvg /></div>
       <SwitchBtn />
       <div className='self-center'><SunSvg /></div>

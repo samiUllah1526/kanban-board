@@ -18,13 +18,11 @@ const SideBarTab = () => {
       {
         TABS.map(tab => {
           return (
-            <>
-                <button key={tab.id} className={`px-4 py-2 flex items-center gap-3 w-48 ${ON_SELECT}`}>
-                  <SideBoxSvg fillColor={'#ffffff'} />
-                  <span className='text-medium'>{tab.label}</span>
-                </button>
-                
-            </>)
+            <button key={tab.id} className={`px-4 py-2 flex items-center gap-3 w-3/5 ${ON_SELECT}`}>
+              <SideBoxSvg fillColor={'#ffffff'} />
+              <span className='text-medium'>{tab.label}</span>
+            </button>
+          )
         })
       }
     </>
