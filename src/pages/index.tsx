@@ -1,5 +1,5 @@
 import { SunSvg } from 'assets/svgs'
-import React from 'react'
+import React, { useState } from 'react'
 import { AddColumnBtn } from './AddColumnBtn'
 import { Column } from './Column'
 
@@ -9,18 +9,21 @@ const COLUMNS = [
 ]
 
 
-//{ id: 3, label: 'Done'},
-
 const Main = () => {
+  const [cols, setCols] = useState(COLUMNS)
+  const addCol = (newCol: any) => setCols(cols => [ ...cols, newCol])
+  const deleteCol = (id: number) => setCols(cols => cols.filter(col => col.id !== id))
+
+
   return (
-    <div className='flex h-full overflow-scroll'>
+    <div className='flex h-[calc(100vh-110px)]'>
       {
-        COLUMNS.map(col => {
-          return <Column key={col.id} label={col.label} />
+        cols.map(col => {
+          return <Column  key={col.id}  id={col.id} label={col.label} deleteCol={deleteCol}/>
 
         })
       }
-      <AddColumnBtn label={'+ Add new'} />
+      <AddColumnBtn addCol={addCol} label={'+ Add new'} />
     </div>
 
   )

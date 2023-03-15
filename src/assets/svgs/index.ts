@@ -6,6 +6,7 @@ import MobileScreenLogoSvg from "./mobileScreenLogoSvg";
 import LogoDarkSvg from "./logoDarkSvg";
 import LogoLightSvg from "./logoLightSvg";
 import OpenEyeSvg from "./openEyeSvg";
+import TrashBinSvg from "./trashBin";
 
 
 export {
@@ -17,4 +18,5 @@ export {
     LogoDarkSvg,
     LogoLightSvg,
     OpenEyeSvg,
+    TrashBinSvg,
 }

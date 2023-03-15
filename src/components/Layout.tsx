@@ -14,10 +14,10 @@ const Layout = ({ nav, header, children }: Props) => {
     return (
         <>
             <div className='flex'>
-                <nav className='w-80'>{nav}</nav>
+                <nav className='grow-0 shrink-0 basis-80'>{nav}</nav>
                 <div className='flex-1'>
-                    {/* <header>{header}</header>
-                    {children} */}
+                    <header>{header}</header>
+                    {children}
                 </div>
             </div>
         </>

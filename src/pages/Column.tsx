@@ -1,3 +1,4 @@
+import { TrashBinSvg } from '@/assets/svgs'
 import React from 'react'
 
 const DOTS_COLOR = [
@@ -14,14 +15,25 @@ const ColoredDot = ({ color }: { color: string }) => {
     )
 }
 
-export const Column = ({ label }: { label: string }) => {
+
+type PropsType = { 
+    label: string
+    id: number
+    deleteCol: (id: number) => void 
+}
+
+
+export const Column = ({ label, id, deleteCol }: PropsType ) => {
     return (
-            <main className='w-80 flex flex-col h-full py-6 px-10'>
+        <main className='w-80 flex flex-col h-full py-6 px-10'>
             <div className='flex items-center'>
-                    <ColoredDot color={'#8471F2'} />
-                    <p className='text-white ml-2'>{label}</p>
-                </div>
-                <div className='mt-3 flex flex-col h-4/5 overflow-scroll border-2 max-w-xs border-dashed border-color-border rounded-lg text-white'></div>
-            </main>
+                <ColoredDot color={'#8471F2'} />
+                <p className='text-white ml-2'>{label}</p>
+            </div>
+            <div className='h-full relative'>
+                <div className='mt-3 flex flex-col h-full border-2 max-w-xs border-dashed border-color-border rounded-lg text-white'></div>
+                <div onClick={() => deleteCol(id)} className='cursor-pointer absolute top-2 -right-1'><TrashBinSvg /></div>
+            </div>
+        </main>
     )
 }
