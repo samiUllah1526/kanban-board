@@ -11,7 +11,7 @@ const COLUMNS = [
 
 const Main = () => {
   const [cols, setCols] = useState(COLUMNS)
-  const addCol = (newCol: any) => setCols(cols => [ ...cols, newCol])
+  const addCol = (newCol: any) => setCols(cols => [...cols, newCol])
   const deleteCol = (id: number) => setCols(cols => cols.filter(col => col.id !== id))
 
 
@@ -19,7 +19,11 @@ const Main = () => {
     <div className='flex h-[calc(100vh-110px)]'>
       {
         cols.map(col => {
-          return <Column  key={col.id}  id={col.id} label={col.label} deleteCol={deleteCol}/>
+          return (
+            <Column key={col.id} id={col.id} label={col.label} deleteCol={deleteCol}>
+              <Card />
+            </Column>
+          )
         })
       }
       <AddColumnBtn addCol={addCol} label={'+ Add New Column'} />

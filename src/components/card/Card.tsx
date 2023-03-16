@@ -54,7 +54,7 @@ export const Card = () => {
 
     return (
         <>
-            <div className='px-5 py-2 rounded-lg bg-color-main w-1/4 hover:opacity-50 hover:cursor-grab'>
+            <div className='px-5 py-2 rounded-lg bg-color-main w-full hover:opacity-50 hover:cursor-grab'>
                 <p className='text-white text-medium font-bold'>{card.description}</p>
                 <p className='mt-3 text-small font-bold text-custom-grey-600'>{completed} of {card.subtasks.length} substasks</p>
             </div>
