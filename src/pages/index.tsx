@@ -16,7 +16,7 @@ const Main = () => {
 
 
   return (
-    <div className='flex h-[calc(100vh-110px)]'>
+    <div className='flex ml-80 h-[calc(100vh-110px)]'>
       {
         cols.map(col => {
           return (
