@@ -13,12 +13,11 @@ type Props = {
 const Layout = ({ nav, header, children }: Props) => {
     return (
         <>
-            <div className='flex'>
-                <nav className='grow-0 shrink-0 basis-80'>{nav}</nav>
-                <div className='flex-1'>
-                    <header>{header}</header>
-                    {children}
-                </div>
+            <header>{header}</header>
+            <div className='flex relative overflow-x-auto'>
+                <nav className='fixed z-[1] min-w-[320px]'>{nav}</nav>
+                {children}
+
             </div>
         </>
     )

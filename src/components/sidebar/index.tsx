@@ -1,14 +1,10 @@
-import React, { ReactNode, useState } from 'react'
-import { LogoLightSvg, MobileScreenLogoSvg } from '@/assets/svgs'
-import { useTrackScreenWidth } from '@/hooks'
+import React, { useState } from 'react'
 import SideBarTab from './SideBarTab'
 import ThemeSwitch from './ThemeSwitch'
 import HideSideBarBtn from './HideSideBarBtn'
 
 const SideBar = () => {
   const [hide, setHide] = useState<boolean>(false)
-  const isTabletorBelow: boolean = useTrackScreenWidth(768)
-  const Logo: ReactNode = isTabletorBelow ? <MobileScreenLogoSvg /> : <LogoLightSvg />
 
   const hideSidebar = (e: Event) => {
     setHide(true)
@@ -18,8 +14,7 @@ const SideBar = () => {
   }
 
   return (
-    <div className={`text-custom-grey-600 bg-color-main h-[100vh]  relative transition-[left] ease-in-out duration-[1500ms] ${hide ? '-left-[320px]': 'left-[0]'}`}>
-      <div className='py-10 px-6 border-solid border-r-2 border-r-color-border border-b-2 border-b-color-border'>{Logo}</div>
+    <div className={`text-custom-grey-600 bg-color-main h-[100vh] relative transition-[left] ease-in-out duration-[1500ms] ${hide ? '-left-[320px]': 'left-[0]'}`}>
         <div className='bg-color-main border-solid border-r-2 border-r-color-border flex flex-col justify-between pl-8 h-[calc(100vh-110px)]'>
           <div className='top-section'>
             <p className='px-4 text-medium mt-2 mb-4'>All Boards {`(3)`}</p>
