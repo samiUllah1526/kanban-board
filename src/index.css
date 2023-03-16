@@ -3,9 +3,37 @@
 @tailwind utilities;
 
 
+:root {
+  --scroll-color: #a8a4ff;
+}
+
+
+body {
+  @apply h-screen bg-color-bg-dark;
+}
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-color);
+}
+
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scroll-color);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-color);
+  border-radius: 14px;
+  border: 3px solid var(--scroll-color);
 }
