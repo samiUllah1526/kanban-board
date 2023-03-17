@@ -1,5 +1,6 @@
 import { TrashBinSvg } from '@/assets/svgs'
 import React from 'react'
+import { useDrop } from 'react-dnd'
 
 const DOTS_COLOR = [
     '#8471F2',
@@ -17,6 +18,7 @@ const ColoredDot = ({ color }: { color: string }) => {
 
 
 type PropsType = {
+    name: string
     label: string
     id: number
     deleteCol: (id: number) => void
@@ -24,14 +26,27 @@ type PropsType = {
 }
 
 
-export const Column = ({ children, label, id, deleteCol }: PropsType) => {
+export const Column = ({ name, children, label, id, deleteCol }: PropsType) => {
+    const [{ canDrop, isOver }, dropref] = useDrop({
+        accept: 'Pending',
+        drop: () => ({
+            name,
+        }),
+        collect: (monitor) => ({
+            isOver: monitor.isOver(),
+            canDrop: monitor.canDrop(),
+        }),
+    });
+
+
+    console.log({ canDrop, isOver })
     return (
         <main className='w-80 flex flex-col h-full py-6 px-10'>
             <div className='flex items-center'>
                 <ColoredDot color={'#8471F2'} />
                 <p className='text-custom-grey-600 ml-2'>{label}</p>
             </div>
-            <div className='h-full relative'>
+            <div ref={dropref} className='h-full relative'>
                 <div className='mt-3 flex flex-col h-full border-2 max-w-xs border-dashed border-color-border rounded-lg text-white'>
                     {children}
                 </div>
