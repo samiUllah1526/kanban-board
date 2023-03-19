@@ -1,12 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 
-function Sidebar() {
-
-  const [open, setOpen] = useState(true)
+function Sidebar({ open, setOpen }) {
   const onOpenClass = open ? 'sidebar-open': 'sidebar-closed'
 
-  const handleHide = () => setOpen(prev => !prev)
   return (
     <div className={`sidebar ${onOpenClass}`}>
     <ul>
