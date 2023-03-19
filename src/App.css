@@ -1,0 +1,181 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: red;
+  min-height: 100vh;
+}
+
+
+.navbar {
+  background: green;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo {
+  padding: 20px;
+  width: 320px;
+  flex-shrink: 0;
+  outline: 1px solid rgb(0, 247, 255);
+
+}
+
+.otherside {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: 1px solid yellow;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: aqua;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+
+
+.main {
+  background-color: yellow;
+  height: calc(100vh - 75px);
+  display: flex;
+
+  /* position: relative; */
+}
+
+.sidebar {
+  /* position: fixed; */
+  background-color: white;
+
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+  padding: 10px 20px;
+  width: 320px;
+}
+
+.item {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: goldenrod;
+  background-color: aqua;
+  border-radius: 20px;
+}
+
+.board {
+  /* position: absolute; */
+  left: 320px;
+
+  background-color: goldenrod;
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+
+  overflow-x: scroll;
+  display: flex;
+  gap: 20px;
+
+}
+
+.board .col-content-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  height: 95%; 
+}
+
+.board .col .col-content {
+  background-color: pink;
+  border-radius: 20px;
+  outline: 1px dotted yellow;
+
+  overflow-y: scroll;
+  height: 100%;
+  width: 300px;
+  padding: 20px;
+
+  flex-shrink: 0;
+}
+
+.col .card {
+  color: black;
+  padding: 20px;
+  min-height: 200px;
+}
+
+
+.sidebar-open {
+  margin-left: 0px;
+  transition-property: margin;
+  transition-duration: 1s;
+}
+
+.sidebar-closed {
+  margin-left: -320px;
+  transition-property: margin;
+  transition-duration: 1s;
+}
+
+
+.sidebar-footer {
+  position: relative;
+}
+
+.sidebar-footer .show-btn{
+  position: absolute;
+  left: 200px;
+}
